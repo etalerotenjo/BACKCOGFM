@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: @project.artifactId@
+    version: @project.version@
+    description: @project.description@
+
+  #CONTROLA LA CREACION DE TABLAS DE CONTROL SPRING BATCH
+  batch:
+    initialize-schema: always
+    #CONTROLA LA EJECUCION DE LOS JOBS POR DEMAMDA
+    job.enabled: false
+
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+        order_inserts: true
+        batch_versioned_data: true
+        order_updates: true
+
+
+      jdbc:
+        batch_size: 2000
